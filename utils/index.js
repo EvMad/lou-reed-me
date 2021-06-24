@@ -47,8 +47,8 @@ const promptUser = () => {
         {
             type:'list',
             name: 'license',
-            message: 'pick a card',
-      choices: ['email', 'phone', 'telekinesis'],
+            message: 'choose a license',
+      choices: ['MIT', 'Apache', 'Mozilla', 'ODC'],
     }
 
 
@@ -60,27 +60,45 @@ const promptUser = () => {
 
 const generateReadMe = (answers) => {
 
-    let lisence;
+    let license;
 
-    // if lices is x
-    // -- licesn url and link is kfrslajfks
-    // else if lices is y
-    // -- licesn url and link is fcewfewf
+    if (answers.license = license.choices[0]) license.badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    else if (answers.license = license.choices[1]) license.badge = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    else if (answers.license = license.choices[2]) licsense.badge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+    else if (answers.license = license.choices[3]) license.badge = '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
+    
+   
 
 
     console.log(answers)
     return `
-        # ${answers.title}
-        > ${answers.description}
-1. ${answers.installation} 
+    #**${answers.title}**
 
-${answers.usage}
-
-- ${answers.contributing}
-
-${lisence}
-
-\` ${answers.tests} \`
+    ##ABOUT
+    
+    ${answers.description}
+    
+    ## INSTALLATION
+    
+    ${answers.installation}
+    
+    ## USAGE
+    
+    ${answers.usage}
+    
+    ### Contributors
+    
+    ${answers.contributing}
+    
+    ### Tests
+    
+    ${answers.test}
+    
+    ### License
+    
+    ${answers.license}
+    
+    ${license.badge}
     `;
 }
 
