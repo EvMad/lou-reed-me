@@ -1,5 +1,5 @@
 
-    # **title** README
+    # **test** README
 
     Table of Contents
     1. [ About. ] (#about)
@@ -12,36 +12,36 @@
     <a name="about"></a>
     ##ABOUT
     
-    descriptors
+    test
     
     <a name="install"></a>
     ## INSTALLATION
     
-    installation
+    test
     
     <a name="usage"></a>
     ## USAGE
     
-    usage users
+    test
     
     <a name="contr"></a>
     ### Contributors
     
-    contribute
+    test
 
-    [title](https://github.com/githim)
+    [title](https://github.com/test)
 
-    Email: email@email.com
+    Email: test
     
     <a name="test"></a>
     ### Tests
     
-    test it
+    test
     
     <a name="lice"></a>
     ### License
     
-    undefined
+    MIT
     
-    
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     

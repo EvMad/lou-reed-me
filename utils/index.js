@@ -77,10 +77,10 @@ const generateReadMe = (answers) => {
     
     const badge = {name: 'link'};
 
-    if (license.choices == license.choices.choices[0]) badge.link = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-    else if (license == license.choices.choices[1]) badge.link = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-    else if (license == license.choices.choices[2]) badge.link = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
-    else if (license == license.choices.choices[3]) badge.link = '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
+    if (answers.license == "MIT") badge.link = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    else if (answers.license == "Apache") badge.link = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    else if (answers.license == "Mozilla") badge.link = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+    else if (answers.license == "ODC") badge.link = '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
 
 
 
@@ -128,7 +128,7 @@ const generateReadMe = (answers) => {
     <a name="lice"></a>
     ### License
     
-    ${answers.license.choices}
+    ${answers.license}
     
     ${badge.link}
     `;
@@ -137,8 +137,8 @@ const generateReadMe = (answers) => {
 // TODO: Create a function to initialize app
 const init = () => {
     promptUser()
-        .then((answers) => writeFileAsync('fakeREADME.md', generateReadMe(answers)))
-        .then(() => console.log('Successfully wrote to fakeREADME.md'))
+        .then((answers) => writeFileAsync('README.md', generateReadMe(answers)))
+        .then(() => console.log('Successfully wrote to README.md'))
         .catch((err) => console.error(err));
 
 }
