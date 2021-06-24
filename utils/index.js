@@ -2,13 +2,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
+const tacoMaker = require('./generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const answers = () => {
-    return inquirer.prompt([
-        {
+const promptUser = () => {
+    return inquirer.prompt([{
             type: 'input',
             name: 'title',
             message: 'What is your project title?',
@@ -43,23 +43,53 @@ const answers = () => {
             name: 'tests',
             message: 'Enter project test details:',
         },
-    
-        
+
+        {
+            type:'list',
+            name: 'license',
+            message: 'pick a card',
+      choices: ['email', 'phone', 'telekinesis'],
+    }
+
+
     ])
 }
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
 
-const generateReadMe = (answers) =>
-``;
+const generateReadMe = (answers) => {
+
+    let lisence;
+
+    // if lices is x
+    // -- licesn url and link is kfrslajfks
+    // else if lices is y
+    // -- licesn url and link is fcewfewf
+
+
+    console.log(answers)
+    return `
+        # ${answers.title}
+        > ${answers.description}
+1. ${answers.installation} 
+
+${answers.usage}
+
+- ${answers.contributing}
+
+${lisence}
+
+\` ${answers.tests} \`
+    `;
+}
 
 // TODO: Create a function to initialize app
 const init = () => {
     promptUser()
-    .then((answers) => writeFileAsync('README.md', generateReadMe(answers)))
-    .then(() => console.log('Successfully wrote to index.html'))
-    .catch((err) => console.error(err));
+        .then((answers) => writeFileAsync('fakeREADME.md', generateReadMe(answers)))
+        .then(() => console.log('Successfully wrote to fakeREADME.md'))
+        .catch((err) => console.error(err));
 
 }
 
