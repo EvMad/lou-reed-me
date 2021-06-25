@@ -69,13 +69,12 @@ const promptUser = () => {
     
 }
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+
 
 const generateReadMe = (answers) => {
+console.log(answers)
 
-    
-    const badge = {name: 'link'};
+const badge = {name: 'link'};
 
     if (answers.license == "MIT") badge.link = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
     else if (answers.license == "Apache") badge.link = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
@@ -83,18 +82,16 @@ const generateReadMe = (answers) => {
     else if (answers.license == "ODC") badge.link = '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
 
 
+    return`
+    # ${answers.title}
 
-    console.log(answers)
-    return `
-    # **${answers.title}** README
-
-    Table of Contents
-    1. [ About. ] (#about)
-    2. [ Installation. ] (#install)
-    3. [ Usage. ] (#usage")
-    4. [ Contributors. ] (#contr)
-    5. [ Tests. ] (#test)
-    6. [ License. ] (#lice)
+    ## Table of Contents
+    * [About](#about)
+    * [Installation](#install)
+    * [Usage](#usage")
+    * [Contributors](#contr)
+    * [Tests](#test)
+    * [License](#lice)
 
     <a name="about"></a>
     ##ABOUT
@@ -129,9 +126,13 @@ const generateReadMe = (answers) => {
     ### License
     
     ${answers.license}
-    
+
     ${badge.link}
     `;
+    
+    
+
+    
 }
 
 // TODO: Create a function to initialize app
@@ -146,10 +147,3 @@ const init = () => {
 // Function call to initialize app
 init();
 
-
-
-
-
-
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
