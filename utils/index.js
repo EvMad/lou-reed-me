@@ -82,53 +82,51 @@ const badge = {name: 'link'};
     else if (answers.license == "ODC") badge.link = '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
 
 
-    return`
-    # ${answers.title}
+    return`# **${answers.title}**
 
-    ## Table of Contents
-    * [About](#about)
-    * [Installation](#install)
-    * [Usage](#usage")
-    * [Contributors](#contr)
-    * [Tests](#test)
-    * [License](#lice)
+## Table of Contents
+* [About](#about)
+* [Installation](#install)
+* [Usage](#usage)
+* [Contributors](#contr)
+* [Tests](#test)
+* [License](#lice)
 
-    <a name="about"></a>
-    ##ABOUT
-    
-    ${answers.description}
-    
-    <a name="install"></a>
-    ## INSTALLATION
-    
-    ${answers.installation}
-    
-    <a name="usage"></a>
-    ## USAGE
-    
-    ${answers.usage}
-    
-    <a name="contr"></a>
-    ### Contributors
-    
-    ${answers.contributing}
 
-    [title](https://github.com/${answers.gitHub})
+## ABOUT
+    
+${answers.description}
+    
 
-    Email: ${answers.email}
+## INSTALLATION
     
-    <a name="test"></a>
-    ### Tests
+${answers.installation}
     
-    ${answers.tests}
-    
-    <a name="lice"></a>
-    ### License
-    
-    ${answers.license}
 
-    ${badge.link}
-    `;
+## USAGE
+    
+${answers.usage}
+    
+
+### Contributors
+    
+${answers.contributing}
+
+[GitHub](https://github.com/${answers.gitHub})
+
+Email: ${answers.email}
+    
+
+### Tests
+    
+${answers.tests}
+    
+
+### License
+    
+${answers.license}
+
+${badge.link}`;
     
     
 
@@ -138,8 +136,8 @@ const badge = {name: 'link'};
 // TODO: Create a function to initialize app
 const init = () => {
     promptUser()
-        .then((answers) => writeFileAsync('README.md', generateReadMe(answers)))
-        .then(() => console.log('Successfully wrote to README.md'))
+        .then((answers) => writeFileAsync('genREADME.md', generateReadMe(answers)))
+        .then(() => console.log('Successfully wrote to genREADME.md'))
         .catch((err) => console.error(err));
 
 }

@@ -1,16 +1,15 @@
-
-    # test
+# **test**
 
     ## Table of Contents
     * [About](#about)
     * [Installation](#install)
-    * [Usage](#usage")
+    * [Usage](#usage)
     * [Contributors](#contr)
     * [Tests](#test)
     * [License](#lice)
 
     <a name="about"></a>
-    ##ABOUT
+    ## ABOUT
     
     test
     
