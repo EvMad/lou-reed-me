@@ -86,11 +86,11 @@ const badge = {name: 'link'};
 
 ## Table of Contents
 * [About](#about)
-* [Installation](#install)
+* [Installation](#installation)
 * [Usage](#usage)
-* [Contributors](#contr)
-* [Tests](#test)
-* [License](#lice)
+* [Contributors](#contributors)
+* [Tests](#tests)
+* [License](#license)
 
 
 ## ABOUT
@@ -136,8 +136,8 @@ ${badge.link}`;
 // TODO: Create a function to initialize app
 const init = () => {
     promptUser()
-        .then((answers) => writeFileAsync('genREADME.md', generateReadMe(answers)))
-        .then(() => console.log('Successfully wrote to genREADME.md'))
+        .then((answers) => writeFileAsync('coolREADME.md', generateReadMe(answers)))
+        .then(() => console.log('Successfully wrote to coolREADME.md'))
         .catch((err) => console.error(err));
 
 }
